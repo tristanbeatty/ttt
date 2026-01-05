@@ -254,7 +254,7 @@ function Run-DellCommandUpdate {
 
     Write-Divider
     Write-Host "Step 3: Uninstalling Dell Command Update..." -ForegroundColor Cyan
-    Run-CommandOrExit { winget uninstall -e --id Dell.CommandUpdate } "Failed to uninstall Dell Command Update."
+    Run-CommandOrExit { winget uninstall -e --id Dell.CommandUpdate --source winget } "Failed to uninstall Dell Command Update."
 
     Write-Divider
     $pending = Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\RebootPending" -ErrorAction SilentlyContinue
