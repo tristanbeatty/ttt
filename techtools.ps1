@@ -233,7 +233,7 @@ function Run-DellCommandUpdate {
 
     Write-Divider
     Write-Host "Step 1: Installing Dell Command Update..." -ForegroundColor Cyan
-    if (-not (Run-CommandOrExit { winget install -e --id Dell.CommandUpdate --accept-package-agreements --accept-source-agreements } "Failed to install Dell Command Update.")) { Pause-Return; return }
+    if (-not (Run-CommandOrExit { winget install -e --id Dell.CommandUpdate --source winget --accept-package-agreements --accept-source-agreements } "Failed to install Dell Command Update.")) { Pause-Return; return }
 
     Write-Divider
     Write-Host "Step 2: Checking and applying updates..." -ForegroundColor Cyan
